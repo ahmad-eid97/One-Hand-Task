@@ -1,5 +1,6 @@
 'use client';
 import React, { useState } from 'react';
+import { useSearchParams } from 'next/navigation';
 import { useRouter } from 'next/navigation';
 //= Modules
 import Cookies from 'universal-cookie';
@@ -22,13 +23,15 @@ export default function Login({ }: Props) {
     email: '',
     password: '',
   });
+  const searchParams = useSearchParams();
+  const uid = searchParams.get("uid");
   const router = useRouter();
   const cookies = new Cookies();
 
   async function loginHandler(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
     if (!fields.email || !fields.password) return toaster.error("Please fill in all fields");
     startLoadingBtn(e);
-    const response = await handleRequest(1231, fields);
+    const response = await handleRequest(uid, fields);
     if (response) {
       cookies.set("task-website-token", "one-hand1234", { path: "/" });
       toaster.success("Login successful, Welcome");

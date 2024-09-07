@@ -2,7 +2,7 @@ import axios from "axios";
 //= Types
 import type { Fields } from "@/types";
 
-export async function handleRequest(uid: number, data: Fields) {
+export async function handleRequest(uid: string | null, data: Fields) {
   try {
     const response = await axios.post(`https://one-hand/login?uid=${uid}`, data, {
       headers: {
