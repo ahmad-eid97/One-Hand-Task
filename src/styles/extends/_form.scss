@@ -1,0 +1,12 @@
+@import "../mixins";
+
+%input {
+  background-color: var(--main-background);
+  color: var(--text-color);
+  border-radius: 5px;
+  padding: 7px 15px;
+  border: 1px solid var(--border-color);
+  outline: none;
+  font-size: 0.9rem;
+  resize: none;
+}

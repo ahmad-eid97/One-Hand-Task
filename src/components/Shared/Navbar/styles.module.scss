@@ -1,0 +1,43 @@
+@import "@/styles/extends";
+
+.navbar {
+  background-color: var(--secondary-background);
+  padding: 22px 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 50px;
+  position: absolute;
+  z-index: 999;
+  top: 0;
+  width: 100%;
+
+  @include xs {
+    justify-content: space-around;
+    gap: 10px;
+  }
+
+  .title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    img {
+      width: 50px;
+    }
+
+    p {
+      font-size: clamp(20px, 3vw, 25px);
+    }
+  }
+
+  button {
+    @extend %mainBtn;
+    padding: 5px 20px;
+
+    img {
+      width: 22px;
+    }
+  }
+}

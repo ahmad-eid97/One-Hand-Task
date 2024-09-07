@@ -1,0 +1,96 @@
+@import "./extends.scss";
+@import "./mixins.scss";
+@import "./variables.scss";
+//==> Reseters
+@import "./reseters/iconify-reset";
+@import "./reseters/toastify-reset";
+@import "./reseters/loading-button";
+
+/***************  { Import & Set Fonts }   *****************/
+@font-face {
+  font-family: "Urbanist";
+  src: url("/fonts/Urbanist.ttf");
+  font-display: swap;
+}
+
+/***************  { General Styles For Elements }   *****************/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  color: var(--text-color);
+  background-color: var(--main-background);
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  --font-sans: "Urbanist";
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  font-family: "Urbanist", ui-sans-serif, system-ui, sans-serif;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  vertical-align: middle;
+  object-fit: cover;
+}
+
+input,
+textarea,
+select {
+  font: inherit;
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  outline: none;
+  padding: 8px 12px;
+
+  &:focus {
+    border-color: var(--main-color);
+  }
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+/*****************************************\ Selection Reset \**************************************/
+
+::selection {
+  background: var(--main-color);
+  color: #000;
+}
+
+::-moz-selection {
+  background: var(--main-color);
+  color: #000;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  width: 8px;
+  height: 8px;
+  border-radius: 3px;
+  background-color: rgb(179, 188, 204);
+}

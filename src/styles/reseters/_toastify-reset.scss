@@ -1,0 +1,37 @@
+li[data-type="error"] {
+  background-color: #fff !important;
+  border-color: rgba(#000, 0.2) !important;
+  color: #fff;
+
+  svg {
+    color: var(--danger-color) !important;
+  }
+}
+
+li[data-type="success"] {
+  background-color: #fff !important;
+  border-color: rgba(#000, 0.2) !important;
+  color: #fff;
+
+  svg {
+    color: var(--success-color) !important;
+  }
+}
+
+li[data-type="info"] {
+  background-color: var(--info-color) !important;
+  border-color: rgba(#000, 0.1) !important;
+  color: #fff;
+}
+
+li[data-type="loading"] {
+  background-color: var(--loading-color) !important;
+  border-color: rgba(#000, 0.1) !important;
+  color: #fff;
+
+  .sonner-spinner {
+    * {
+      background-color: #fff;
+    }
+  }
+}

@@ -1,0 +1,107 @@
+@import "@/styles/mixins.scss";
+
+.formGroup {
+  position: relative;
+  label {
+    font-size: 16px;
+    pointer-events: auto;
+    text-align: start;
+    color: var(--text-color);
+    display: inline-block;
+    margin-bottom: 5px;
+    text-transform: capitalize;
+
+    @include sm {
+      font-size: 14px;
+    }
+  }
+
+  .field {
+    display: flex;
+    align-items: center;
+    border-radius: 4px;
+    position: relative;
+
+    .icon {
+      position: absolute;
+      width: 50px;
+      display: grid;
+      place-content: center;
+      cursor: pointer;
+      svg {
+        width: 50px;
+        height: 23px;
+        color: var(--main-color);
+      }
+    }
+
+    .pass_icon {
+      position: absolute;
+      width: 50px;
+      right: -15px;
+      top: 25%;
+      font-size: 20px;
+      color: var(--main-color);
+      cursor: pointer;
+    }
+
+    input {
+      display: block;
+      width: 100%;
+      padding: 11px 20px;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.64;
+      background-color: rgba(var(--main-background-rgb), 0);
+      border: 1px solid var(--main-color);
+      background-clip: padding-box;
+      border-radius: 5px;
+      transition:
+        background-color 0.15s ease-in-out,
+        border-color 0.15s ease-in-out;
+
+      &.with_icon {
+        padding: 11px 20px 11px 45px;
+      }
+
+      &::-webkit-inner-spin-button,
+      &::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      &:placeholder-shown {
+        background-color: rgba(var(--main-background-rgb), 0.01);
+      }
+
+      &:disabled {
+        background-color: rgba(var(--main-background-rgb), 0.2);
+        color: var(--text-color-main);
+        cursor: not-allowed;
+      }
+
+      &::placeholder {
+        color: #6e6e6e;
+        text-transform: capitalize;
+      }
+
+      @include sm {
+        padding: 12px 20px;
+        font-size: 15px;
+      }
+
+      @include xs {
+        padding: 8px 15px;
+        font-size: 14px;
+      }
+
+      &:focus {
+        border-color: rgba(var(--main-color-rgb), 0.5);
+        outline: 2px solid rgba(var(--main-color-rgb), 0.5);
+        box-shadow:
+          inset 0 1px 2px rgba(63, 65, 31, 0.075),
+          0 0 0 0 transparent;
+      }
+    }
+  }
+}
